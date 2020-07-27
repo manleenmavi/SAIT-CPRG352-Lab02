@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dukh Bhanjani Sahib</title>
+    <link rel="stylesheet" href="./ext/style_index.css" />
+  <link rel="manifest" href="manifest.json">
+
+  </head>
+  <body>
+    <div id="head-navbar">
+      <header id="">
+        <img
+          id="logo-head"
+          src="./ext/logo-head.png"
+          alt="Dukh Bhanjani Sahib"
+          srcset=""
+        />
+      </header>
+    </div>
+    <div id="play-bath-button">
+      <a href="./play.html"><button id="play">PLAY PATH</button></a>
+    </div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').then(function (registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, function (err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+
+      
+    </script>
+  </body>
+</html>

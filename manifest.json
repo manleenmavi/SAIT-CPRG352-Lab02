@@ -1,0 +1,20 @@
+{
+  "short_name": "Dukh Bhanjani Sahib",
+  "name": "Dukh Bhanjani Sahib Path",
+  "icons": [
+    {
+      "src": "ext/logo-favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "ext/logo-favicon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#eaf4fc",
+  "display": "Standalone",
+  "theme_color": "#ffdead"
+}

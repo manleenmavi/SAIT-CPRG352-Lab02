@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" manifest="offline.mf">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dukh Bhanjani Sahib : Play Path</title>
+    <link rel="stylesheet" href="./ext/style_play.css" />
+  </head>
+  <body>
+    <div id="head-navbar">
+      <header id="">
+        <img
+          id="logo-head"
+          src="./ext/logo-head.png"
+          alt="Dukh Bhanjani Sahib"
+          srcset=""
+        />
+      </header>
+    </div>
+    <div id="playing-often">
+      <div id="often-ques"><h1>How often do you want to do Path ?</h1></div>
+      <div class="often-buttons">
+        <a href="./path-1.html"
+          ><button id="often-one" class="often-button" class="button">
+            ONE
+          </button></a
+        >
+        <a href="./path-5.html"
+          ><button id="often-five" class="often-button" class="button">
+            FIVE
+          </button></a
+        >
+        <button
+          id="often-custom"
+          class="often-button"
+          class="button"
+          onclick="hidebuttonshowform()"
+        >
+          CUSTOM
+        </button>
+      </div>
+      <div id="custom-play">
+        <form action="./path.html" method="GET" id="custom-playg">
+          <input
+            type="number"
+            name="p"
+            class="custom-input"
+            class="button"
+          /><input type="submit" value="Play" class="custom-input" />
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function hidebuttonshowform() {
+        if (document.getElementById("often-custom")) {
+          if (document.getElementById("often-custom").style.display == "none") {
+            document.getElementById("often-custom").style.display = "block";
+            document.getElementById("custom-play").style.display = "none";
+          } else {
+            document.getElementById("often-custom").style.display = "none";
+            document.getElementById("custom-play").style.display = "block";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

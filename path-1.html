@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" manifest="offline.mf">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playing Dukh Bhanjani Sahib</title>
+    <link rel="stylesheet" href="./ext/style_path.css" />
+  </head>
+  <body>
+    <div id="head-navbar">
+      <header id="">
+        <img
+          id="logo-head"
+          src="./ext/logo-head.png"
+          alt="Dukh Bhanjani Sahib"
+          srcset=""
+        />
+      </header>
+    </div>
+    <div>
+      <h1 id="heading">
+        <span id="ing-or-ed"> Playing <span id="played"></span>/</span
+        ><span id="tobeplayed"></span><span id="if-ed"></span>
+      </h1>
+      <audio
+        src="./ext/dukhbhanjani.mp3"
+        id="path-audio"
+        controls
+        controlsList="nodownload"
+        loop
+      ></audio>
+    </div>
+
+    <div id="play-agian">
+      <br /><br />
+      <a href="./play.html"><button id="play">PLAY AGAIN</button></a>
+    </div>
+
+    <script>
+      // For Knowing Repetion
+      var howmanytime = 1;
+
+      // For Loop Control
+      var loopCount = 0;
+      document
+        .getElementById("path-audio")
+        .addEventListener("timeupdate", function () {
+          if (this.currentTime == 0) ++loopCount;
+          if (loopCount == howmanytime) this.pause();
+        });
+
+      //For Displaying
+      document.getElementById("tobeplayed").innerHTML = howmanytime;
+      document.getElementById("played").innerHTML = loopCount + 1;
+
+      //For Updating and AutoPlay
+      window.onload = function () {
+        setInterval(function () {
+          if (howmanytime == loopCount - 1) {
+            document.getElementById("ing-or-ed").innerHTML = "Played ";
+            document.getElementById("play-agian").style.display = "block";
+            if (howmanytime == 1) {
+              document.getElementById("if-ed").innerHTML = " Time";
+            } else {
+              document.getElementById("if-ed").innerHTML = " Times";
+            }
+          } else {
+            document.getElementById("played").innerHTML = loopCount + 1;
+          }
+        }, 1000);
+        //AutoPlay
+        document.getElementById("path-audio").play();
+      };
+
+      //After Finishing Path
+    </script>
+  </body>
+</html>
